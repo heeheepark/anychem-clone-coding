@@ -26,6 +26,12 @@ html {
 }
 
 body {
+  font-family: "Nanum Gothic", "Noto Sans KR", sans-serif;
+  font-size: 13px;
+  color: #777;
+  line-height: 1.6;
+  letter-spacing: -0.3px;
+  word-break: keep-all;
 }
 
 /* 공통 클래스 */
