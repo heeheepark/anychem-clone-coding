@@ -16,7 +16,10 @@ window.addEventListener("load", function (event) {
     let html = ``;
     _data.img.forEach((item) => {
       let temp = `
-            <div class="swiper-slide" style="background-image: url(images/${item})"></div>
+        <div
+          class="swiper-slide"
+          style="background-image: url('images/${item}')">
+        </div>
         `;
       html += temp;
     });
