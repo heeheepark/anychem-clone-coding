@@ -1,6 +1,4 @@
 window.addEventListener("load", function () {
-  
-
   // nav 에 마우스 오버하면 header 높이 260px 변경주기
   // nav 에 마우스 아웃하면 header 높이 100px 변경하기
   // header 를 js 로 저장해 보자(변수 정의해 보자)
@@ -27,7 +25,43 @@ window.addEventListener("load", function () {
     header.classList.remove("header-active");
   });
 
-  // let a = document.querySelectorAll(".gnb > li");
+  let gnbA = document.querySelectorAll(".gnb > li");
+  let navBlueBar = document.querySelector(".nav-blue-bar");
+
+  let posX = gnbA[0].getBoundingClientRect().left;
+  let width = gnbA[0].getBoundingClientRect().width;
+  navBlueBar.style.left = posX + "px";
+  navBlueBar.style.width = width + "px";
+
+  // gnbA.forEach((item) => {
+  //   item.addEventListener("mouseenter", function (event) {
+  //     let posX = this.offsetLeft;
+  //     console.log(posX);
+  //     let width = this.offsetWidth;
+  //     anime({
+  //       targets: navBlueBar,
+  //       left: posX,
+  //       width: width,
+  //       easing: "easeInOutQuad",
+  //       duration: 500,
+  //     });
+  //   });
+  // });
+
+  gnbA.forEach((item) => {
+    item.addEventListener("mouseenter", function (event) {
+      let posX = this.getBoundingClientRect().left;
+      let width = this.getBoundingClientRect().width;
+      anime({
+        targets: navBlueBar,
+        left: posX,
+        width: width,
+        easing: "easeInOutQuad",
+        duration: 500,
+      });
+    });
+  });
+
   // console.log(a);
   // a.forEach(function (item) {
   //   console.log(item);
