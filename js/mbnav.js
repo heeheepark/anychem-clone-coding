@@ -9,7 +9,7 @@ window.addEventListener("load", function () {
     // 토글도 좋다.
     // mbNa.classList.toggle("mb-nav-active")
     // mb-nav-active 클래스 적용 여부(true, false)
-    let checkActive = mbNav.classList.contains(mbNavActive);
+    let checkActive = this.classList.contains(mbNavActive);
 
     if (checkActive === false) {
       mbNav.classList.add(mbNavActive);
@@ -18,10 +18,6 @@ window.addEventListener("load", function () {
       mbNav.classList.remove(mbNavActive);
       mbWrap.classList.remove(mbWrapActive);
     }
-    // // Reset 하겠다.
-    // resetSubMenu();
-    // // 펼침 기록 변수 초기화
-    // sideOpenNumber = undefined;
   });
 
   // const mbGnb = document.querySelector(".mb-gnb");
@@ -42,7 +38,7 @@ window.addEventListener("load", function () {
 
   // 화면의 리사이즈를 체크 해서 처리
   // this.window.onresize = function(){}
-  this.window.addEventListener("resize", function () {
+  window.addEventListener("resize", function () {
     let windWidth = window.innerWidth;
     if (windWidth > mbWidth) {
       mbNav.classList.remove(mbNavActive);
