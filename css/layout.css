@@ -20,7 +20,7 @@ html {
   font-size: 16px;
 }
 body {
-  font-family: "Nanum Gothic", "Noto Sans KR", sans-serif;
+  font-family: 'Nanum Gothic', 'Noto Sans KR', sans-serif;
   font-size: 13px;
   color: #777;
   line-height: 1.6;
@@ -29,6 +29,11 @@ body {
 }
 /* 공통클래스 */
 .inner {
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  position: relative;
 }
 .wrap {
   width: 100%;
