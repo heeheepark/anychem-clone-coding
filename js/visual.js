@@ -1,16 +1,16 @@
-window.addEventListener("load", function (event) {
-  const swVisualWrap = document.querySelector(".sw-visual .swiper-wrapper");
+/**
+ * 작성자: 박주희
+ * 작성일: 2023-05-26
+ * 기능 업데이트: json 데이터를 이용한 html 구조 생성 적용
+ */
 
-  const xhr = new XMLHttpRequest();
-  xhr.addEventListener("readystatechange", function (event) {
-    let req = event.target;
-    if (req.readyState === XMLHttpRequest.DONE) {
-      let data = JSON.parse(req.response);
-      makeVisualHtml(data);
-    }
-  });
-  xhr.open("GET", "data/visualdata.json");
-  xhr.send();
+window.addEventListener('load', function (event) {
+  const swVisualWrap = document.querySelector('.sw-visual .swiper-wrapper');
+
+  this.fetch('data/visualdata.json')
+    .then((res) => res.json())
+    .then((result) => makeVisualHtml(result))
+    .catch((err) => console.log(err));
 
   function makeVisualHtml(_data) {
     let html = ``;
@@ -26,13 +26,17 @@ window.addEventListener("load", function (event) {
 
     swVisualWrap.innerHTML = html;
 
-    const swVisual = new Swiper(".sw-visual", {
+    const swVisual = new Swiper('.sw-visual', {
       loop: true,
-      effect: "fade",
+      effect: 'fade',
       speed: 800,
       autoplay: {
         delay: 2500,
         disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.sw-visual-pg',
+        clickable: true,
       },
     });
   }
