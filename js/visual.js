@@ -43,7 +43,6 @@ window.addEventListener('load', function (event) {
     // .sw-visual-pg 에는 span.swiper-pagination-bullet이 생성되었을 것이다.
     // innerHTML을 이용해서 내용을 넣어보자.
     const swVisualBullets = document.querySelectorAll('.sw-visual-pg .swiper-pagination-bullet');
-    console.log(swVisualBullets);
     swVisualBullets.forEach((item, index, arr) => {
       item.innerHTML = `<em>${index < 9 ? '0' : ''}${index + 1}</em>`;
     });
