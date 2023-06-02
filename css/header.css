@@ -1,6 +1,8 @@
 .header {
   display: flex;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   justify-content: space-between;
   align-items: flex-start;
 
@@ -13,11 +15,17 @@
 
   z-index: 9999;
 }
+.header-fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
 .header::before {
   position: absolute;
   top: 100px;
   left: 0;
-  content: "";
+  content: '';
   width: 100%;
   height: 1px;
   background: rgba(0, 0, 0, 0.1);
@@ -67,7 +75,7 @@
   color: #222;
   letter-spacing: -0.3px;
   font-weight: 700;
-  font-family: "Noto Sans KR";
+  font-family: 'Noto Sans KR';
   white-space: nowrap;
   margin-bottom: 25px;
   text-align: center;
@@ -83,7 +91,7 @@
   line-height: 26px;
   color: #08151d;
   font-weight: 400;
-  font-family: "Noto Sans KR";
+  font-family: 'Noto Sans KR';
   white-space: nowrap;
 }
 .submenu li a:hover {
@@ -107,7 +115,7 @@
   font-size: 13px;
   color: #7e7e7e;
   font-weight: 700;
-  font-family: "Noto Sans KR";
+  font-family: 'Noto Sans KR';
 }
 /* header 반응형 */
 @media screen and (max-width: 1720px) {
@@ -140,6 +148,7 @@
 @media screen and (max-width: 1080px) {
   .gnb > li > a {
     font-size: 16px;
+    padding: 0 20px;
   }
 }
 

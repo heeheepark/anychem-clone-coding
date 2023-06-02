@@ -39,5 +39,12 @@ window.addEventListener('load', function (event) {
         clickable: true,
       },
     });
+    // 위의 구문을 통해서 slide가 생성되면
+    // .sw-visual-pg 에는 span.swiper-pagination-bullet이 생성되었을 것이다.
+    // innerHTML을 이용해서 내용을 넣어보자.
+    const swVisualBullets = document.querySelectorAll('.sw-visual-pg .swiper-pagination-bullet');
+    swVisualBullets.forEach((item, index, arr) => {
+      item.innerHTML = `<em>${index < 9 ? '0' : ''}${index + 1}</em>`;
+    });
   }
 });
