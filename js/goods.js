@@ -57,7 +57,7 @@ window.addEventListener('load', function () {
     });
     swGoods.on('slideChange', function () {
       let count = this.realIndex % SLIDECOUNT;
-      focusMenu(count);
+      focusMenu(this.realIndex);
     });
   }
 
@@ -94,5 +94,17 @@ window.addEventListener('load', function () {
       };
     });
   }
+
   getData();
+
+  //슬라이드 멈추기, 재생하기
+  const bt = document.querySelector('.sw-goods-pause');
+  const icon = bt.querySelector('.fa-pause');
+  let swGoodsState = 'play';
+  bt.onclick = (event) => {
+    const isPlaying = swGoodsState === 'play';
+    swGoods.autoplay[isPlaying ? 'stop' : 'start']();
+    swGoodsState = isPlaying ? 'stop' : 'play';
+    icon.classList.toggle('fa-play');
+  };
 });
