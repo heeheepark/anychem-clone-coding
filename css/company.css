@@ -46,8 +46,10 @@
 .company-list .company-box > div > p {
   font-size: 27px;
   font-weight: 600;
+  position: relative;
   line-height: 1.5;
   word-break: keep-all;
+  z-index: 9;
 }
 .company-list .company-box > div > a {
   display: inline-block;

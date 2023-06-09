@@ -53,8 +53,10 @@ $fontName: 'Noto Sans KR', sans-serif;
                 size: 27px;
                 weight: 600;
               }
+              position: relative;
               line-height: 1.5;
               word-break: keep-all;
+              z-index: 9;
             }
             > a {
               display: inline-block;
