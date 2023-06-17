@@ -20,7 +20,7 @@ html {
   font-size: 16px;
 }
 body {
-  font-family: 'Nanum Gothic', 'Noto Sans KR', sans-serif;
+  font-family: "Nanum Gothic", "Noto Sans KR", sans-serif;
   font-size: 13px;
   color: #777;
   line-height: 1.6;
@@ -41,4 +41,149 @@ body {
   margin: 0 auto;
   position: relative;
   overflow: hidden;
+}
+
+/* 클론코드 안내창 */
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9999999999;
+  font-family: "Pretendard";
+  letter-spacing: -0.3px;
+}
+.modal-cont {
+  width: 600px;
+  height: 425px;
+  border-radius: 20px;
+  background: #fff;
+  text-align: center;
+}
+.modal-active {
+  overflow: hidden !important;
+}
+.modal .inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  padding: 20px 30px 30px;
+  border: none;
+}
+.closeBtn {
+  cursor: pointer;
+}
+.closeBtn span {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 15px;
+  right: 20px;
+  font-size: 35px;
+}
+.text-area {
+  font-size: 18px;
+}
+.fix-text {
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+.fix-text > span {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #000;
+}
+.fix-cont {
+  height: 100px;
+  color: #6c6c6c;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: start;
+  overflow: scroll;
+  background: #ededed;
+  padding: 10px;
+}
+.fix-cont::-webkit-scrollbar {
+  display: none;
+}
+.fix-cont > p > em {
+  font-weight: 600;
+}
+.fix-cont > span {
+  display: inline-block;
+  margin-bottom: 12px;
+}
+.notice {
+  font-size: 20px;
+  line-height: 30px;
+  color: #000;
+  margin-bottom: 15px;
+}
+.notice p:last-child {
+  margin-top: 10px;
+}
+.notice em {
+  font-weight: 700;
+}
+.icon-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-area .icon {
+  position: relative;
+}
+.icon-area .icon a {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  border: 1px solid #ddd;
+  overflow: hidden;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin-right: 15px;
+}
+.icon-area .icon a img {
+  width: 30px;
+  background: #fff;
+}
+.icon-area .icon a > span {
+  display: block;
+  line-height: 43px;
+  font-size: 35px;
+}
+.icon-area .icon > span {
+  display: none;
+  width: 90px;
+  background: #979797;
+  color: #fff;
+  position: absolute;
+  top: 54px;
+  left: -22px;
+  padding: 2px;
+  border-radius: 3px;
+  white-space: nowrap;
+  font-size: 12px;
+}
+.icon-area .icon > span::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-bottom-color: #979797;
+  border-top: 0;
+  margin-left: -5px;
+  margin-top: -5px;
 }
