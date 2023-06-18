@@ -25,13 +25,10 @@
   position: absolute;
   top: 100px;
   left: 0;
-  content: '';
+  content: "";
   width: 100%;
   height: 1px;
   background: rgba(0, 0, 0, 0.1);
-  /* 투명하기 때문에 안보여요 */
-  /* opacity: 0;
-  transition: opacity 0.5s; */
 }
 .header-active {
   height: 260px !important;
@@ -47,7 +44,6 @@
 }
 
 .nav {
-  /* position: relative; */
   margin-left: 240px;
   transition: margin 0.5s;
 }
@@ -75,7 +71,7 @@
   color: #222;
   letter-spacing: -0.3px;
   font-weight: 700;
-  font-family: 'Noto Sans KR';
+  font-family: "Noto Sans KR";
   white-space: nowrap;
   margin-bottom: 25px;
   text-align: center;
@@ -91,7 +87,7 @@
   line-height: 26px;
   color: #08151d;
   font-weight: 400;
-  font-family: 'Noto Sans KR';
+  font-family: "Noto Sans KR";
   white-space: nowrap;
 }
 .submenu li a:hover {
@@ -115,7 +111,7 @@
   font-size: 13px;
   color: #7e7e7e;
   font-weight: 700;
-  font-family: 'Noto Sans KR';
+  font-family: "Noto Sans KR";
 }
 /* header 반응형 */
 @media screen and (max-width: 1720px) {

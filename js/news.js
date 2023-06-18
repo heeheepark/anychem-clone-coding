@@ -1,9 +1,4 @@
 window.addEventListener("load", function () {
-  // 외부 데이터 로딩
-  //   fetch("data/newsdata.json")
-  //     .then((res) => res.json())
-  //     .then((result) => console.log(result))
-  //     .catch((err) => console.log(err));
   const getNews = async () => {
     try {
       const res = await fetch("data/newsdata.json");
@@ -35,7 +30,6 @@ window.addEventListener("load", function () {
       html += tag;
     });
     const newsWrap = document.querySelector(".sw-news .swiper-wrapper");
-    console.log(html);
     newsWrap.innerHTML = html;
 
     // swiper 생성
@@ -53,11 +47,11 @@ window.addEventListener("load", function () {
       },
       breakpoints: {
         1200: {
-          slidesPerView: 3, //브라우저가 1024보다 클 때
+          slidesPerView: 3,
           spaceBetween: 10,
         },
         768: {
-          slidesPerView: 2, //브라우저가 768보다 클 때
+          slidesPerView: 2,
           spaceBetween: 10,
         },
       },

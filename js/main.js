@@ -1,3 +1,3 @@
-window.addEventListener('load', function (event) {
+window.addEventListener("load", function (event) {
   AOS.init();
 });

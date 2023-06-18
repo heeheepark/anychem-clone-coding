@@ -3,7 +3,6 @@ window.onload = function () {
   let body = document.querySelector("body");
   let modal = document.querySelector(".modal");
   const modalClose = document.querySelector(".modal-cont .closeBtn");
-  console.log(modalClose);
   body.classList.add("modal-active");
   modalClose.onclick = function () {
     body.classList.remove("modal-active");

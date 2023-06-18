@@ -1,15 +1,9 @@
-window.addEventListener('load', function () {
-  // fetch("data/gooddata.json")
-  //   .then((res) => res.json())
-  //   .then((result) => console.log(result))
-  //   .catch((err) => console.log(err));
-
+window.addEventListener("load", function () {
   let swGoods;
-  // const SLIDECOUNT = 4;
 
   const getData = async function () {
     try {
-      let res = await fetch('data/gooddata.json');
+      let res = await fetch("data/gooddata.json");
       let result = await res.json();
       makeSlide(result);
       makeSlideShow();
@@ -22,12 +16,6 @@ window.addEventListener('load', function () {
   function makeSlide(_data) {
     let html = ``;
     let copyArr = [..._data.goods];
-
-    // Swiper 버전에 따른 문제 발생
-    // 강제 목록 추가 제거
-    // if (copyArr.length <= SLIDECOUNT) {
-    //   copyArr = [..._data.goods, ..._data.goods];
-    // }
 
     copyArr.forEach((item, index, arr) => {
       let tag = `
@@ -48,11 +36,11 @@ window.addEventListener('load', function () {
       html += tag;
     });
 
-    document.querySelector('.sw-goods .swiper-wrapper').innerHTML = html;
+    document.querySelector(".sw-goods .swiper-wrapper").innerHTML = html;
   }
 
   function makeSlideShow() {
-    swGoods = new Swiper('.sw-goods', {
+    swGoods = new Swiper(".sw-goods", {
       loop: true,
       speed: 1000,
       slidesPerView: 3,
@@ -62,8 +50,8 @@ window.addEventListener('load', function () {
         disableOnInteraction: false,
       },
       navigation: {
-        nextEl: '.sw-goods-next',
-        prevEl: '.sw-goods-prev',
+        nextEl: ".sw-goods-next",
+        prevEl: ".sw-goods-prev",
       },
       breakpoints: {
         480: {
@@ -84,21 +72,18 @@ window.addEventListener('load', function () {
         },
       },
     });
-    swGoods.on('slideChange', function () {
-      // let count = this.realIndex % SLIDECOUNT;
-      // focusMenu(count);
+    swGoods.on("slideChange", function () {
       focusMenu(this.realIndex);
     });
   }
 
   function focusMenu(_index) {
-    let lis = document.querySelectorAll('.goods-list li');
+    let lis = document.querySelectorAll(".goods-list li");
     lis.forEach((item, index, arr) => {
       if (index === _index) {
-        // 순서번호랑 슬라이드 번호가 같다면 add
-        item.classList.add('focus');
+        item.classList.add("focus");
       } else {
-        item.classList.remove('focus');
+        item.classList.remove("focus");
       }
     });
   }
@@ -111,13 +96,11 @@ window.addEventListener('load', function () {
       `;
       html += tag;
     });
-    document.querySelector('.goods-list').innerHTML = html;
+    document.querySelector(".goods-list").innerHTML = html;
 
-    // li 의 태그를 클릭을 하는 경우 슬라이드이동
-    let lis = document.querySelectorAll('.goods-list li a');
+    let lis = document.querySelectorAll(".goods-list li a");
     lis.forEach((item, index, arr) => {
       item.onclick = function (event) {
-        // a 태그의 href 막기
         event.preventDefault();
         swGoods.slideToLoop(index);
       };
@@ -128,27 +111,14 @@ window.addEventListener('load', function () {
 
   getData();
 
-  // 슬라이드 멈추기/재생하기
-  const bt = document.querySelector('.sw-goods-pause');
-  const icon = bt.querySelector('.fa-pause');
+  const bt = document.querySelector(".sw-goods-pause");
+  const icon = bt.querySelector(".fa-pause");
 
-  let swGoodsState = 'play';
+  let swGoodsState = "play";
   bt.onclick = (event) => {
-    const isPlaying = swGoodsState === 'play';
-    swGoods.autoplay[isPlaying ? 'stop' : 'start']();
-    swGoodsState = isPlaying ? 'stop' : 'play';
-    icon.classList.toggle('fa-play');
-    // if (swGoodsState === "play") {
-    //   // 슬라이드 멈춰라
-    //   swGoods.autoplay.stop();
-    //   swGoodsState = "stop";
-    //   icon.classList.add("fa-play");
-    // } else {
-    //   // 슬라이드 재실행
-    //   swGoods.autoplay.start();
-    //   swGoodsState = "play";
-    //   icon.classList.remove("fa-play");
-    // }
+    const isPlaying = swGoodsState === "play";
+    swGoods.autoplay[isPlaying ? "stop" : "start"]();
+    swGoodsState = isPlaying ? "stop" : "play";
+    icon.classList.toggle("fa-play");
   };
-  //------------- 재생 멈추기
 });

@@ -4,10 +4,10 @@
  * 기능 업데이트: json 데이터를 이용한 html 구조 생성 적용
  */
 
-window.addEventListener('load', function (event) {
-  const swVisualWrap = document.querySelector('.sw-visual .swiper-wrapper');
+window.addEventListener("load", function (event) {
+  const swVisualWrap = document.querySelector(".sw-visual .swiper-wrapper");
 
-  this.fetch('data/visualdata.json')
+  this.fetch("data/visualdata.json")
     .then((res) => res.json())
     .then((result) => makeVisualHtml(result))
     .catch((err) => console.log(err));
@@ -26,25 +26,24 @@ window.addEventListener('load', function (event) {
 
     swVisualWrap.innerHTML = html;
 
-    const swVisual = new Swiper('.sw-visual', {
+    const swVisual = new Swiper(".sw-visual", {
       loop: true,
-      effect: 'fade',
+      effect: "fade",
       speed: 800,
       autoplay: {
         delay: 2500,
         disableOnInteraction: false,
       },
       pagination: {
-        el: '.sw-visual-pg',
+        el: ".sw-visual-pg",
         clickable: true,
       },
     });
-    // 위의 구문을 통해서 slide가 생성되면
-    // .sw-visual-pg 에는 span.swiper-pagination-bullet이 생성되었을 것이다.
-    // innerHTML을 이용해서 내용을 넣어보자.
-    const swVisualBullets = document.querySelectorAll('.sw-visual-pg .swiper-pagination-bullet');
+    const swVisualBullets = document.querySelectorAll(
+      ".sw-visual-pg .swiper-pagination-bullet"
+    );
     swVisualBullets.forEach((item, index, arr) => {
-      item.innerHTML = `<em>${index < 9 ? '0' : ''}${index + 1}</em>`;
+      item.innerHTML = `<em>${index < 9 ? "0" : ""}${index + 1}</em>`;
     });
   }
 });
